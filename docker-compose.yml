@@ -5,7 +5,6 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    image: course-admin_web
     ports:
       - "8011:80"
   backend:
@@ -13,7 +12,6 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: node:lts-slim
     ports:
       - "8111:3001"
     volumes:
