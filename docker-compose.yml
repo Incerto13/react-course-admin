@@ -2,6 +2,7 @@ version: "3"
 services:
   frontend:
     container_name: course-admin_web
+    restart: unless-stopped
     build:
       context: ./web
       dockerfile: Dockerfile
@@ -9,6 +10,7 @@ services:
       - "8011:80"
   backend:
     container_name: course-admin_server
+    restart: unless-stopped
     build:
       context: ./server
       dockerfile: Dockerfile
