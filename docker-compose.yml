@@ -3,11 +3,14 @@ services:
   frontend:
     container_name: course-admin_web
     restart: unless-stopped
+    env_file: ./web/.env
     build:
       context: ./web
       dockerfile: Dockerfile
     ports:
       - "8011:80"
+    links:
+      - backend
   backend:
     container_name: course-admin_server
     restart: unless-stopped
@@ -18,3 +21,4 @@ services:
       - "8111:3001"
     volumes:
       - ./server:/usr/src/app
+      - /usr/src/app/node_modules

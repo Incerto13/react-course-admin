@@ -1,1 +1,150 @@
-{"courses":[{"id":1,"title":"Securing React Apps with Auth0","slug":"react-auth0-authentication-security","authorId":1,"category":"JavaScript"},{"id":2,"title":"React: The Big Picture","slug":"react-big-picture","authorId":1,"category":"JavaScript"},{"id":3,"title":"Creating Reusable React Components","slug":"react-creating-reusable-components","authorId":1,"category":"JavaScript"},{"id":4,"title":"Building a JavaScript Development Environment","slug":"javascript-development-environment","authorId":1,"category":"JavaScript"},{"id":5,"title":"Building Applications with React and Redux","slug":"react-redux-react-router-es6","authorId":1,"category":"JavaScript"},{"id":6,"title":"Building Applications in React and Flux","slug":"react-flux-building-applications","authorId":1,"category":"JavaScript"},{"id":7,"title":"Clean Code: Writing Code for Humans","slug":"writing-clean-code-humans","authorId":1,"category":"Software Practices"},{"id":8,"title":"Architecting Applications for the Real World","slug":"architecting-applications-dotnet","authorId":1,"category":"Software Architecture"},{"id":9,"title":"Becoming an Outlier: Reprogramming the Developer Mind","slug":"career-reboot-for-developer-mind","authorId":1,"category":"Career"},{"id":10,"title":"Web Component Fundamentals","slug":"web-components-shadow-dom","authorId":1,"category":"HTML5"},{"id":11,"title":"React: Getting Started","slug":"react-js-getting-started","authorId":2,"category":"JavaScript"},{"id":12,"title":"Node.js: Getting Started","slug":"nodejs-getting-started","authorId":2,"category":"JavaScript"},{"id":13,"title":"Advanced React.js","slug":"reactjs-advanced","authorId":2,"category":"JavaScript"},{"id":14,"title":"Advanced Node.js","slug":"nodejs-advanced","authorId":2,"category":"JavaScript"},{"id":15,"title":"Building Scalable APIs with GraphQL","slug":"graphql-scalable-apis","authorId":2,"category":"Rest API"},{"id":16,"title":"RESTful Web Services with Node.js and Express","slug":"node-js-express-rest-web-services-update","authorId":3,"category":"Rest API"},{"id":17,"title":"Testing JavaScript for Node.js with Mocha","slug":"mocha-javascript-testing-nodejs","authorId":3,"category":"JavaScript"},{"id":18,"title":"JavaScript Best Practices","slug":"javascript-best-practices","authorId":3,"category":"JavaScript"},{"id":19,"title":"Practical Design Patterns in JavaScript","slug":"javascript-practical-design-patterns","authorId":3,"category":"JavaScript"}],"authors":[{"id":1,"name":"Cory House","slug":"cory-house","avgCourseRating":4.7},{"id":2,"name":"Samer Buna","slug":"samer-buna","avgCourseRating":4.5},{"id":3,"name":"Jonathan Mills","slug":"jonathan-mills","avgCourseRating":4.5}]}
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Securing React Apps with Auth0",
+      "slug": "react-auth0-authentication-security",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 2,
+      "title": "React: The Big Picture",
+      "slug": "react-big-picture",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 3,
+      "title": "Creating Reusable React Components",
+      "slug": "react-creating-reusable-components",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 5,
+      "title": "Building Applications with React and Redux",
+      "slug": "react-redux-react-router-es6",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 6,
+      "title": "Building Applications in React and Flux",
+      "slug": "react-flux-building-applications",
+      "authorId": 1,
+      "category": "JavaScript"
+    },
+    {
+      "id": 7,
+      "title": "Clean Code: Writing Code for Humans",
+      "slug": "writing-clean-code-humans",
+      "authorId": 1,
+      "category": "Software Practices"
+    },
+    {
+      "id": 8,
+      "title": "Architecting Applications for the Real World",
+      "slug": "architecting-applications-dotnet",
+      "authorId": 1,
+      "category": "Software Architecture"
+    },
+    {
+      "id": 9,
+      "title": "Becoming an Outlier: Reprogramming the Developer Mind",
+      "slug": "career-reboot-for-developer-mind",
+      "authorId": 1,
+      "category": "Career"
+    },
+    {
+      "id": 10,
+      "title": "Web Component Fundamentals",
+      "slug": "web-components-shadow-dom",
+      "authorId": 1,
+      "category": "HTML5"
+    },
+    {
+      "id": 11,
+      "title": "React: Getting Started",
+      "slug": "react-js-getting-started",
+      "authorId": 2,
+      "category": "JavaScript"
+    },
+    {
+      "id": 12,
+      "title": "Node.js: Getting Started",
+      "slug": "nodejs-getting-started",
+      "authorId": 2,
+      "category": "JavaScript"
+    },
+    {
+      "id": 13,
+      "title": "Advanced React.js",
+      "slug": "reactjs-advanced",
+      "authorId": 2,
+      "category": "JavaScript"
+    },
+    {
+      "id": 14,
+      "title": "Advanced Node.js",
+      "slug": "nodejs-advanced",
+      "authorId": 2,
+      "category": "JavaScript"
+    },
+    {
+      "id": 15,
+      "title": "Building Scalable APIs with GraphQL",
+      "slug": "graphql-scalable-apis",
+      "authorId": 2,
+      "category": "Rest API"
+    },
+    {
+      "id": 16,
+      "title": "RESTful Web Services with Node.js and Express",
+      "slug": "node-js-express-rest-web-services-update",
+      "authorId": 3,
+      "category": "Rest API"
+    },
+    {
+      "id": 17,
+      "title": "Testing JavaScript for Node.js with Mocha",
+      "slug": "mocha-javascript-testing-nodejs",
+      "authorId": 3,
+      "category": "JavaScript"
+    },
+    {
+      "id": 18,
+      "title": "JavaScript Best Practices",
+      "slug": "javascript-best-practices",
+      "authorId": 3,
+      "category": "JavaScript"
+    },
+    {
+      "id": 19,
+      "title": "Practical Design Patterns in JavaScript",
+      "slug": "javascript-practical-design-patterns",
+      "authorId": 3,
+      "category": "JavaScript"
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Cory House",
+      "slug": "cory-house",
+      "avgCourseRating": 4.7
+    },
+    {
+      "id": 2,
+      "name": "Samer Buna",
+      "slug": "samer-buna",
+      "avgCourseRating": 4.5
+    },
+    {
+      "id": 3,
+      "name": "Jonathan Mills",
+      "slug": "jonathan-mills",
+      "avgCourseRating": 4.5
+    }
+  ]
+}
