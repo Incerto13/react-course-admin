@@ -1,0 +1,14 @@
+
+## Running locally
+
+
+## Running in docker (locally)
+```bash
+bash run-docker-dev.sh
+```
+
+## Running in docker (staging or prod)
+```bash
+bash run-docker.sh
+```
+

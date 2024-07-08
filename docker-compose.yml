@@ -1,24 +1,31 @@
-version: "3"
+
 services:
-  frontend:
-    container_name: course-admin_web
+  web:
+    container_name: course-admin-web
+    environment:
+      ENV: ${ENV}
+    image: incerto13/react-course-admin_web:${ENV}-latest
     restart: unless-stopped
     env_file: ./web/.env
     build:
       context: ./web
       dockerfile: Dockerfile
     ports:
-      - "8011:80"
+      - 8011:80
     links:
       - backend
-  backend:
+
+  server:
     container_name: course-admin_server
+    environment:
+      ENV: ${ENV}
+    image: incerto13/react-course-admin_server:${ENV}-latest
     restart: unless-stopped
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
-      - "8111:3001"
-    volumes:
-      - ./server:/usr/src/app
-      - /usr/src/app/node_modules
+      - 8111:3001
+    # volumes:
+    #   - ./server:/usr/src/app
+    #   - /usr/src/app/node_modules

@@ -1,0 +1,21 @@
+# only run from context of parent incerto-k8 directory when orchestrating all portfolio apps in local dev
+
+services:
+  web:
+    container_name: course-admin-web
+    restart: unless-stopped
+    env_file: react-course-admin/web/.env
+    build:
+      context: react-course-admin/web
+      dockerfile: Dockerfile
+    ports:
+      - 8011:80
+
+  server:
+    container_name: course-admin_server
+    restart: unless-stopped
+    build:
+      context: react-course-admin/server
+      dockerfile: Dockerfile
+    ports:
+      - 8111:3001
