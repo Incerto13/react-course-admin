@@ -12,8 +12,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8011:80
-    links:
-      - backend
 
   server:
     container_name: course-admin_server
