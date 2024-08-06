@@ -8,13 +8,13 @@ npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Running in docker (build for local dev)
+## Running in docker (local dev)
 ```bash
 bash run-docker-dev.sh
 ```
 Open [http://localhost:8011](http://localhost:8011) to view it in the browser.
 
-## Running in docker (build & tag images to deploy to higher envs)
+## Running in docker
 ```bash
 bash run-docker.sh
 ```
