@@ -2,25 +2,25 @@
 services:
   web:
     container_name: react-course-admin_web
-    environment:
-      ENV: ${ENV}
-    image: incerto13/react-course-admin_web:${ENV}-latest
-    restart: unless-stopped
     env_file: ./web/.env
     build:
       context: ./web
       dockerfile: Dockerfile
+    environment:
+      ENV: ${ENV}
+    image: incerto13/react-course-admin_web:${ENV}-latest
+    restart: unless-stopped
     ports:
       - 8011:80
 
   server:
     container_name: react-course-admin_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
     environment:
       ENV: ${ENV}
     image: incerto13/react-course-admin_server:${ENV}-latest
     restart: unless-stopped
-    build:
-      context: ./server
-      dockerfile: Dockerfile
     ports:
       - 8111:3001
