@@ -1,28 +1,38 @@
+
 ## Installation
 ```bash
 # requirements: node 16
+# install web app libraries
 cd /web
 npm install
 cd ..
+# install server libraries
 cd /server
 npm install
+# install tmux for bash scripts
+brew install tmux
 ```
 
-## Running locally
+## Running locally (postgres and pgweb in docker with web and server running in terminal)
 ```bash
 # from root directory
-bash run-dev.sh
+bash run-local.dev.sh
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Running in docker (local dev)
+## Running in docker (everything in docker, all built locally)
 ```bash
-bash run-docker-dev.sh
+bash run-docker.dev.sh
 ```
 Open [http://localhost:8011](http://localhost:8011) to view it in the browser.
 
-## Running in docker
+## Build docker images (for postgres, server and web for ci pipeline)
 ```bash
-bash run-docker.sh
-```
+bash build-docker.sh
+``` 
 
+### Running TypeOrm Migrations on Server App
+```bash
+cd server
+name=new-migration npm run migration:generate
+```

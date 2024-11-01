@@ -24,7 +24,7 @@ jobs:
         run: echo "$ENVS" > .env
       - name: Build and Push to Docker Hub
         run: |
-          bash run-docker.sh 
+          bash build-docker.sh 
           docker push incerto13/react-course-admin_postgres:staging-latest 
           docker push incerto13/react-course-admin_server:staging-latest 
           docker push incerto13/react-course-admin_web:staging-latest
