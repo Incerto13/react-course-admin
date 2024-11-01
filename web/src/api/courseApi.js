@@ -1,6 +1,8 @@
 import { handleResponse, handleError } from "./apiUtils";
 const baseUrl = `${process.env.REACT_APP_COURSE_ADMIN_SERVER_URL}/courses`;
 
+console.log('baseUrl: ', baseUrl);
+
 export function getCourses() {
   return fetch(baseUrl)
     .then(handleResponse)

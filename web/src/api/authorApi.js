@@ -1,6 +1,8 @@
 import { handleResponse, handleError } from "./apiUtils";
 const baseUrl = `${process.env.REACT_APP_COURSE_ADMIN_SERVER_URL}/authors`;
 
+console.log('baseUrl: ', baseUrl);
+
 export function getAuthors() {
   return fetch(baseUrl)
     .then(handleResponse)
