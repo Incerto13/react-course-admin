@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import * as authorActions from "../../redux/actions/authorActions";
@@ -27,7 +29,7 @@ export function ManageAuthorPage({
     } else {
       setAuthor({ ...props.author });
     }
-  }, [props.author]);
+  }, [props.author, authors.length, loadAuthors]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -87,15 +89,15 @@ ManageAuthorPage.propTypes = {
 };
 
 // selector function
-export function getAuthorBySlug(authors, slug) {
-  return authors.find(author => author.slug === slug) || null;
+export function getAuthorById(authors, id) {
+  return authors.find(author => author.id == id) || null;
 }
 
 function mapStateToProps(state, ownProps) {
-  const slug = ownProps.match.params.slug;
+  const id = ownProps.match.params.id;
   const author =
-    slug && state.authors.length > 0
-      ? getAuthorBySlug(state.authors, slug)
+    id && state.authors.length > 0
+      ? getAuthorById(state.authors, id)
       : newAuthor;
   return {
     author: author,

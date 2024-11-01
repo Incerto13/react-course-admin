@@ -20,10 +20,10 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/courses" component={CoursesPage} />
-        <Route path="/course/:slug" component={ManageCoursePage} />
+        <Route path="/course/:id" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
         <Route path="/authors" component={AuthorsPage} />
-        <Route path="/author/:slug" component={ManageAuthorPage} />
+        <Route path="/author/:id" component={ManageAuthorPage} />
         <Route path="/author" component={ManageAuthorPage} />
         <Route component={PageNotFound} />
       </Switch>

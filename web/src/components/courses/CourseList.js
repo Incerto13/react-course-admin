@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -5,7 +7,7 @@ import "./CourseList.css";
 
 function CourseList({ courses, onDeleteClick }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage, setCoursesPerPage] = useState(5);
+  const [coursesPerPage] = useState(5);
 
   // Logic for displaying current courses
   const indexOfLastCourse = currentPage * coursesPerPage; // 5 for first page
@@ -53,16 +55,7 @@ function CourseList({ courses, onDeleteClick }) {
             return (
               <tr key={course.id}>
                 <td>
-                  <a
-                    target="blank"
-                    className="btn btn-light"
-                    href={"http://pluralsight.com/courses/" + course.slug}
-                  >
-                    Watch
-                  </a>
-                </td>
-                <td>
-                  <Link to={"/course/" + course.slug}>{course.title}</Link>
+                  <Link to={"/course/" + course.id}>{course.title}</Link>
                 </td>
                 <td>{course.authorName}</td>
                 <td>{course.category}</td>

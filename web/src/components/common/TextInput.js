@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-concat */
+
 import React from "react";
 import PropTypes from "prop-types";
 

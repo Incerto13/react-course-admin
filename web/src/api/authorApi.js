@@ -1,5 +1,5 @@
 import { handleResponse, handleError } from "./apiUtils";
-const baseUrl = process.env.REACT_APP_COURSE_ADMIN_DOMAIN_SERVER + "/authors/";
+const baseUrl = `${process.env.REACT_APP_COURSE_ADMIN_SERVER_URL}/authors`;
 
 export function getAuthors() {
   return fetch(baseUrl)
@@ -8,7 +8,7 @@ export function getAuthors() {
 }
 
 export function saveAuthor(author) {
-  return fetch(baseUrl + (author.id || ""), {
+  return fetch(`${baseUrl}/${author.id || ""}`, {
     method: author.id ? "PUT" : "POST", // POST for create, PUT to update when id already exists.
     headers: { "content-type": "application/json" },
     body: JSON.stringify(author)
@@ -17,8 +17,8 @@ export function saveAuthor(author) {
     .catch(handleError);
 }
 
-export function deleteAuthor(authorId) {
-  return fetch(baseUrl + authorId, { method: "DELETE" })
+export function deleteAuthor(id) {
+  return fetch(`${baseUrl}/${id}`, { method: "DELETE" })
     .then(handleResponse)
     .catch(handleError);
 }

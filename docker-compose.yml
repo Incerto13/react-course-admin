@@ -1,26 +1,26 @@
+# build images during github workflow that pushes (w/ tags) to docker hub
+# should only need to push images for postgres, server and web
 
 services:
-  web:
-    container_name: react-course-admin_web
-    env_file: ./web/.env
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-    environment:
-      ENV: ${ENV}
-    image: incerto13/react-course-admin_web:${ENV}-latest
-    restart: unless-stopped
-    ports:
-      - 8011:80
 
-  server:
+  react-to-do_postgres:
+    image: incerto13/react-to-do_postgres:${ENV}-latest
+    container_name: react-to-do_postgres
+    build:
+      context: ./server
+      dockerfile: ./docker/postgres/Dockerfile   
+
+  react-course-admin_server:
+    image: incerto13/react-course-admin_server:${ENV}-latest
     container_name: react-course-admin_server
     build:
       context: ./server
       dockerfile: Dockerfile
-    environment:
-      ENV: ${ENV}
-    image: incerto13/react-course-admin_server:${ENV}-latest
-    restart: unless-stopped
-    ports:
-      - 8111:3001 
+
+  react-course-admin_web:
+    image: incerto13/react-course-admin_web:${ENV}-latest
+    container_name: react-course-admin_web
+    env_file: ./web/.env
+    build:
+      context: ./web
+      dockerfile: ./docker/Dockerfile

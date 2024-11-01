@@ -1,5 +1,16 @@
 # !/bin/bash
 
+# generate .env file in web directory
 source ../.env
-echo REACT_APP_COURSE_ADMIN_DOMAIN_SERVER=$REACT_APP_COURSE_ADMIN_DOMAIN_SERVER > web/.env
-sudo docker compose -f docker-compose.dev.yml up --build -d
+printf "REACT_APP_COURSE_ADMIN_SERVER_URL=$REACT_APP_COURSE_ADMIN_SERVER_URL" > web/.env
+# printf "REACT_COURSE_ADMIN_TYPEORM_HOST=$REACT_COURSE_ADMIN_TYPEORM_HOST\nREACT_COURSE_ADMIN_POSTGRES_PORT=$REACT_COURSE_ADMIN_POSTGRES_PORT\n" > server/.env
+echo "successfully created web/.env and server/.env files"
+
+# clean docker
+docker stop react-course-admin_postgres react-course-admin_pgweb react-course-admin_server react-course-admin_web
+docker system prune -af
+
+# run all containers in docker
+echo "starting postgres, pgweb, react-course-admin_server and react-course-admin_web containers..."
+sudo docker compose -f docker-compose.dev.yml --env-file ../.env up -d
+

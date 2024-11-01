@@ -6,11 +6,8 @@ const AuthorList = ({ authors, onDeleteClick }) => (
   <table className="table">
     <thead>
       <tr>
-        <th />
         <th>Name</th>
         <th>Avg. Course Rating</th>
-
-        <th />
       </tr>
     </thead>
     <tbody>
@@ -18,16 +15,7 @@ const AuthorList = ({ authors, onDeleteClick }) => (
         return (
           <tr key={author.id}>
             <td>
-              <a
-                target="blank"
-                className="btn btn-light"
-                href={"http://pluralsight.com/profile/author/" + author.slug}
-              >
-                View Profile
-              </a>
-            </td>
-            <td>
-              <Link to={"/author/" + author.slug}>{author.name}</Link>
+              <Link to={"/author/" + author.id}>{author.name}</Link>
             </td>
             <td style={{ paddingLeft: 70 }}>{author.avgCourseRating}</td>
 

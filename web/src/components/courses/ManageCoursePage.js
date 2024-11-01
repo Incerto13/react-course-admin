@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import * as courseActions from "../../redux/actions/courseActions";
@@ -36,7 +38,7 @@ export function ManageCoursePage({
         alert("loading authors failed" + error);
       });
     }
-  }, [props.course]);
+  }, [props.course, courses.length, authors.length, loadAuthors, loadCourses]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -99,15 +101,15 @@ ManageCoursePage.propTypes = {
 };
 
 // selector function
-export function getCourseBySlug(courses, slug) {
-  return courses.find(course => course.slug === slug) || null;
+export function getCourseById(courses, id) {
+  return courses.find(course => course.id == id) || null;
 }
 
 function mapStateToProps(state, ownProps) {
-  const slug = ownProps.match.params.slug;
+  const id = ownProps.match.params.id;
   const course =
-    slug && state.courses.length > 0
-      ? getCourseBySlug(state.courses, slug)
+    id && state.courses.length > 0
+      ? getCourseById(state.courses, id)
       : newCourse;
   return {
     course: course,
