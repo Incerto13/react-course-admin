@@ -15,7 +15,7 @@ services:
     container_name: react-course-admin_server
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: ./docker/server/Dockerfile
 
   react-course-admin_web:
     image: incerto13/react-course-admin_web:${ENV}-latest
