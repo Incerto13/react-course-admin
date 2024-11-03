@@ -26,6 +26,7 @@ bash run-docker.dev.sh
 ```
 Open [http://localhost:8011](http://localhost:8011) to view it in the browser.
 
+
 ## Build docker images (for postgres, server and web for ci pipeline)
 ```bash
 bash build-docker.sh
