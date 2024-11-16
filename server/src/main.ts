@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import dataSource from '../ormconfig';
 import { Logger } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const logger = new Logger();
@@ -13,10 +14,13 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   var whitelist = [
     'http://localhost:3000', // local dev
-    'http://localhost:8011', // docker dev => REACT_COURSE_ADMIN_URL
-    'https://react-course-admin.incertotech.com', 
-    'https://react-course-admin.staging.incertotech.com'
+    'http://localhost:8011', // docker dev
+    'https://react-course-admin.incertotech.com', // staging
+    'https://react-course-admin.staging.incertotech.com', // prod
+    'http://localhost:3001', // swagger
   ];
+
+  // Enable CORS
   app.enableCors({
     origin: function (origin, callback) {
       // if origin is undefined, then the call is coming from same origin and wasn't 
@@ -33,6 +37,15 @@ async function bootstrap() {
     methods: "GET,PUT,POST,DELETE,UPDATE,OPTIONS",
     credentials: true,
   });
+
+  // Set up Swagger
+  const config = new DocumentBuilder()
+  .setTitle('Nest.js REST API')
+  .setDescription('Course Admin')
+  .setVersion('1.0')
+  .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('docs', app, document);
 
   await app.listen(port);
   logger.log(`Application listening on port ${port}`)
