@@ -17,7 +17,9 @@ async function bootstrap() {
     'http://localhost:8011', // docker dev
     'https://react-course-admin.incertotech.com', // staging
     'https://react-course-admin.staging.incertotech.com', // prod
-    'http://localhost:3001', // swagger
+    'http://localhost:3001', // swagger local and docker dev
+    'https://nest-course-admin-api.staging.incertotech.com', // swagger in staging
+    'https://nest-course-admin-api.incertotech.com' // swagger in prod
   ];
 
   // Enable CORS
