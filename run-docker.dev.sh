@@ -3,7 +3,6 @@
 # generate .env file in web directory
 source ../.env
 printf "REACT_APP_COURSE_ADMIN_SERVER_URL=$REACT_APP_COURSE_ADMIN_SERVER_URL" > web/.env
-# printf "REACT_COURSE_ADMIN_TYPEORM_HOST=$REACT_COURSE_ADMIN_TYPEORM_HOST\nREACT_COURSE_ADMIN_POSTGRES_PORT=$REACT_COURSE_ADMIN_POSTGRES_PORT\n" > server/.env
 echo "successfully created web/.env and server/.env files"
 
 # clean docker
